@@ -1,5 +1,1 @@
-<ul>
-  <li *ngFor="let task of tasks | async; let i = index" [attr.data-index]="i">
-    {{ i + 1 }}. {{ task.description }} ({{ task.id }}) is due in {{ task.dueDate }}, and it is {{ task.completed ? 'completed' : 'not completed'}}.
-  </li>
-</ul>
+<app-dashboard></app-dashboard>
