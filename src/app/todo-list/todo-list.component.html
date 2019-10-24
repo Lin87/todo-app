@@ -1,0 +1,5 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks | async; let i = index" [attr.data-index]="i">
+        {{ task.description }} ({{ task.id }}) is due in {{ task.dueDate }}, and it is {{ task.completed ? 'completed' : 'not completed'}}.
+    </li>
+</ul>
