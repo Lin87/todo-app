@@ -1,0 +1,15 @@
+.col-task {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+.col-duedate {
+    width: 163.97px;
+    margin-left: 15px;
+}
+.col-trash {
+    width: 30.25px;
+    margin-left: 15px;
+}
+.text-strike {
+    text-decoration: line-through;
+}

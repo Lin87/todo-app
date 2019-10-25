@@ -1,3 +1,26 @@
-<p class="mb-0">{{ todo.description }} is due in {{ todo.dueDate }}, and it is {{ todo.completed ? 'completed' : 'not completed'}}.<br>
-    <small class="text-muted">Added on {{formattedTimestamp}}</small>
-</p>
+<div class="d-flex flex-row flex-nowrap align-items-center">
+    <div class="col-checkbox">
+        <button class="btn btn-light" (click)="setCompleted()"><span *ngIf="this.todo.completed; then showChecked; else showNotChecked"></span></button>
+    </div>
+    <div class="col-task">
+        <p class="mb-0" [class.text-danger]="this.todo.dueDate == 'urgent'" [class.text-strike]="this.todo.completed"> {{ todo.description }}</p>
+    </div>
+    <div class="col-duedate">
+        <div class="btn-group btn-group-sm" role="group">
+            <button type="button" [className]="this.todo.dueDate == 'urgent' ? 'btn btn-primary' : 'btn btn-secondary'" (click)="changeDueDate('urgent')">Urgent</button>
+            <button type="button" [className]="this.todo.dueDate == 'days' ? 'btn btn-primary' : 'btn btn-secondary'" (click)="changeDueDate('days')">Days</button>
+            <button type="button" [className]="this.todo.dueDate == 'week' ? 'btn btn-primary' : 'btn btn-secondary'" (click)="changeDueDate('week')">Week</button>
+        </div>
+    </div>
+    <div class="col-trash">
+        <button type="button" class="btn btn-sm btn-danger" (click)="deleteTodo()"><fa-icon [icon]="['fas', 'trash']"></fa-icon></button>
+    </div>
+</div>
+
+<ng-template #showChecked>
+    <fa-icon [icon]="['far', 'check-square']" ></fa-icon>
+</ng-template>
+
+<ng-template #showNotChecked>
+    <fa-icon [icon]="['far', 'square']" ></fa-icon>
+</ng-template>
