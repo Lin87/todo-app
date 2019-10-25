@@ -1,3 +1,19 @@
+.jumbotron {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../../assets/watercolor-landscape-painting.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+}
 @media all and (max-width:576px) {
     .add-btn-block {
         width: 100%;
