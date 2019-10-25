@@ -1,0 +1,6 @@
+@media all and (max-width:576px) {
+    .add-btn-block {
+        width: 100%;
+        display: block;
+    }
+}   
