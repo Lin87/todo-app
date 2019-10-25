@@ -10,13 +10,15 @@ import { environment } from '../environments/environment';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TodoListItemComponent
   ],
   imports: [
     BrowserModule,
