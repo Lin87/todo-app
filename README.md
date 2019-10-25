@@ -9,9 +9,10 @@ https://github.com/Lin87/todo-app
 ## Dev Notes
 * For the extra credit 1, I followed the instructions on the [medium.com post](https://medium.com/@coderonfleek/firebase-firestore-and-angular-todo-list-application-d0fe760f6bca). There is no video on that page. The instructions are a bit outdated because some of the Firebase UIs have changed.
 * Instead of creating a todo list items in an array in the "todo service", the todo items (or tasks) are save to (and retreived from) a Firestore database.
-* In the source files, I created a directory called `firestore`. This directory contains the configuration to a Cloud Firestore database (`firestore.config.ts`), a model for the todo item or task (`task.model.ts`), and a service (`task.service.ts`) to add, update, and delete tasks.
+* In the source files, I created a directory called `firestore`. This directory contains the configuration (not API secrets) to a Cloud Firestore database (`firestore.config.ts`), a model for the todo item or task (`task.model.ts`), and a service (`task.service.ts`) to add, update, and delete tasks.
 * The Firestore database is pre-popluated with 3 todos/tasks.
 * For the routing, I have set the base URL (e.g., localhost:4200) to redirect to the dashboard component (e.g., localhost:4200/dashboard).
+* There is a route and component for page not found.
 * New todo item is added to the bottom of the todo list. In the Firestore database, I have set a `timestamp` field. The list is ordered by the timestamp in ascending order.
 * The due date buttons are a button group. The blue background color is to indicate the button is active (or "to indicate how timely the task needs to be completed").
 * For extra credit 2, I added a red button with a trash icon to delete the todo item from the list (and also from the database).
