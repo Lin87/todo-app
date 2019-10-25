@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { TodoItem } from '../model/todo-item.model';
+import { TaskService } from '../firestore/task.service';
+import { Task } from '../firestore/task.model';
 
 @Component({
   selector: 'app-new-todo-item',
@@ -10,14 +11,13 @@ import { TodoItem } from '../model/todo-item.model';
 export class NewTodoItemComponent implements OnInit {
 
   addTodoForm: FormGroup;
-  newTodoItem: TodoItem;
+  newTodoTask: Task;
   hasError: boolean = false;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private taskService: TaskService) {
     this.addTodoForm = fb.group({
       'description': ['', Validators.required],
-      'dueDate': 'days',
-      'completed': false
+      'dueDate': 'days'
     });
   }
 
@@ -27,9 +27,18 @@ export class NewTodoItemComponent implements OnInit {
   onSubmit(value: any): void {
 
     if (this.addTodoForm.valid) {
-      this.newTodoItem = new TodoItem(value.description, value.dueDate, value.completed);
-      console.log(this.newTodoItem);
+
+      this.newTodoTask = {
+        description: value.description,
+        dueDate: value.dueDate,
+        timestamp: new Date()
+      }
+
+      this.taskService.addTask(this.newTodoTask);
       this.hasError = false;
+
+      this.addTodoForm.reset({'dueDate': 'days'});
+
     } else {
       this.hasError = true;
     }

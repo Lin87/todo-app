@@ -23,7 +23,8 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {
 
-    this.tasks = this.db.collection(config.collection_endpoint).snapshotChanges().pipe(
+    let tasksCollectionRef = this.db.collection<Task>(config.collection_endpoint, ref => ref.orderBy('timestamp', 'asc'));
+    this.tasks = tasksCollectionRef.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
         //Get document data

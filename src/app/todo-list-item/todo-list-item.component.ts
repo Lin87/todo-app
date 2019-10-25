@@ -9,10 +9,13 @@ import { Task } from '../firestore/task.model';
 export class TodoListItemComponent implements OnInit {
 
   @Input() todo: Task;
+
+  formattedTimestamp: string;
   
   constructor() { }
 
   ngOnInit() {
+    this.formattedTimestamp = this.todo.timestamp.toDate().toLocaleDateString();
   }
 
 }

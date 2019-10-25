@@ -1,1 +1,3 @@
-{{ todo.description }} ({{ todo.id }}) is due in {{ todo.dueDate }}, and it is {{ todo.completed ? 'completed' : 'not completed'}}.
+<p class="mb-0">{{ todo.description }} is due in {{ todo.dueDate }}, and it is {{ todo.completed ? 'completed' : 'not completed'}}.<br>
+    <small class="text-muted">Added on {{formattedTimestamp}}</small>
+</p>
