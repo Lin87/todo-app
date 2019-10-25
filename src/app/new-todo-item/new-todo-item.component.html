@@ -2,14 +2,18 @@
     <div class="background"></div>
     <div class="container">
         <h2>New Todo Item</h2>
-        <p class="lead">Enter a new todo task.</p>
-        <form>
+        <p class="lead">Enter a new todo task description.</p>
+        
+        <form [formGroup]="addTodoForm" (ngSubmit)="onSubmit(addTodoForm.value)">
             <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [formControl]="addTodoForm.controls['description']" [class.border-danger]="hasError"></textarea>
+                <div class="form-text text-danger text-center" *ngIf="hasError">
+                    <small>A task description is required.</small>
+                </div>
             </div>
             <div class="form-inline d-sm-flex align-items-sm-center justify-content-sm-end">
                 <label class="my-1 mr-2 form-text text-muted" for="duedate">Due Date</label>
-                <select class="custom-select mr-sm-2" id="duedate">
+                <select class="custom-select mr-sm-2" id="duedate" formControlName="dueDate">
                     <option selected>Choose...</option>
                     <option value="urgent">Urgent</option>
                     <option value="days">Days</option>
