@@ -6,7 +6,7 @@
         
         <form [formGroup]="addTodoForm" (ngSubmit)="onSubmit(addTodoForm.value)">
             <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" [formControl]="addTodoForm.controls['description']" [class.border-danger]="hasError"></textarea>
+                <input type="text" class="form-control" [formControl]="addTodoForm.controls['description']" [class.border-danger]="hasError" placeholder="e.g., take out the trash" />
                 <div class="form-text text-danger text-center" *ngIf="hasError">
                     <small>A task description is required.</small>
                 </div>
