@@ -11,6 +11,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
     TodoListComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    NewTodoItemComponent
   ],
   imports: [
     BrowserModule,
