@@ -1,7 +1,7 @@
 # Homework #4: Todo App 
 Ethan Lin 
 CSC436 Web Applications - Autumn 2019
-https://github.com/Lin87/todoapp
+https://github.com/Lin87/todo-app
 
 ## Instruction
 `http-server dist/todoapp`
