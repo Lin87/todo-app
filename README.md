@@ -7,7 +7,7 @@ https://github.com/Lin87/todo-app
 `http-server dist/todo-app`
 
 ## Dev Notes
-* For the extra credit 1, I followed the instructions on the [medium.com post](https://medium.com/@coderonfleek/firebase-firestore-and-angular-todo-list-application-d0fe760f6bca). There is no video on that page. The instructions are a bit outdated because some of the Firebase UIs have changed.
+* For the extra credit 1, I followed the instructions on the [medium.com post](https://medium.com/@coderonfleek/firebase-firestore-and-angular-todo-list-application-d0fe760f6bca). There is no video on that page. The instructions are a bit outdated because some of the Firebase UIs have changed. Also, rather than creating a separate app for this extra credit. I combined it with the todo app.
 * Instead of creating a todo list items in an array in the "todo service", the todo items (or tasks) are save to (and retreived from) a Firestore database.
 * In the source files, I created a directory called `firestore`. This directory contains the configuration (not API secrets) to a Cloud Firestore database (`firestore.config.ts`), a model for the todo item or task (`task.model.ts`), and a service (`task.service.ts`) to add, update, and delete tasks.
 * The Firestore database is pre-popluated with 3 todos/tasks.
