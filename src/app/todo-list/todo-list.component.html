@@ -1,5 +1,3 @@
 <ul class="list-group mt-3">
-    <li class="list-group-item" *ngFor="let task of tasks | async; let i = index" [attr.data-index]="i">
-        {{ task.description }} ({{ task.id }}) is due in {{ task.dueDate }}, and it is {{ task.completed ? 'completed' : 'not completed'}}.
-    </li>
+    <app-todo-list-item class="list-group-item" *ngFor="let task of tasks | async; let i = index" [attr.data-index]="i" [todo]="task"></app-todo-list-item>
 </ul>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task } from '../firestore/task.model';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListItemComponent implements OnInit {
 
+  @Input() todo: Task;
+  
   constructor() { }
 
   ngOnInit() {
