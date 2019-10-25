@@ -1,3 +1,7 @@
-.todo-navbar {
-    background-color: #e3f2fd;
+.todo-app-github {
+    color: #fff;
+}
+
+.todo-app-github:hover {
+    color: #000;
 }

@@ -1,6 +1,5 @@
-<nav class="navbar navbar-light todo-navbar d-flex justify-content-center">
-    <span class="navbar-brand mr-0 mb-0 h1">{{ title }}</span>
+<nav class="navbar navbar-dark bg-primary">
+    <span class="navbar-brand mr-0 mb-0 h1"><fa-icon [icon]="['fas', 'check-square']"></fa-icon> {{ title }}</span>
+    <a class="todo-app-github" href="https://github.com/Lin87" target="_blank"><fa-icon [icon]="['fab', 'github']" size="lg"></fa-icon></a>
 </nav>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

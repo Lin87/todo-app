@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, "todo-app"),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
